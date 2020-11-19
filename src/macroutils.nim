@@ -1,9 +1,11 @@
 
+import macros
 import ast_pattern_matching
 import options
 import optionsutils
 
 export options
+export macros
 
 
 func newBreakStmt*(): NimNode =
