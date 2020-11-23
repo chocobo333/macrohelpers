@@ -51,7 +51,7 @@ func addElse*(ifStmt: NimNode, elseBranch: NimNode): NimNode =
     ## When `ifStmt` has no else branches, add to `elseBranch` `ifStmt`
     ifStmt.expectKind({nnkIfStmt, nnkIfExpr})
     elseBranch.expectKind({nnkElse, nnkElseExpr})
-    if ifStmt[^1].kind in {nnkElse, nnkElseExpr}:
+    if ifStmt.len == 0 or ifStmt[^1].kind notin {nnkElse, nnkElseExpr}:
         ifStmt.add elseBranch
     ifStmt
 
