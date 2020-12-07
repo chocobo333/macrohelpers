@@ -4,9 +4,3 @@
 # the letter 't').
 #
 # To run these tests, simply execute `nimble test`.
-
-import unittest
-
-import macroutils
-test "can add":
-  check add(5, 5) == 10
